@@ -32,6 +32,139 @@
                         </button>
                     </router-link>
                 </div>
+                <div>
+                    <div class="m-5 max-w-lg border border-4 border-red-600 p-4">
+                        <div>
+                            <p class="text-black text-3xl font-bold text-start">Fulan Adi Ahmad</p>
+                            <div class="relative overflow-x-auto my-3 ">
+                            <table class="w-full text-left font-semibold">
+                                <tbody class="text-xl text-gray-400 ">
+                                    <td>
+                                        <tr scope="col" class="">
+                                            ID
+                                        </tr>
+                                        <tr scope="col" class="">
+                                            ID Membership
+                                        </tr>
+                                        <tr scope="col" class="">
+                                            Contact
+                                        </tr>
+                                        <tr scope="col" class="">
+                                            Email
+                                        </tr>
+                                        <tr scope="col" class="">
+                                            Membership
+                                        </tr>
+                                        <tr scope="col" class="">
+                                            Exp Membership
+                                        </tr>
+                                    </td>
+                                    <td class="text-black">
+                                        <tr class=" ">
+                                            ID-001
+                                        </tr>
+                                        <tr class="">
+                                            1345256472842
+                                        </tr>
+                                        <tr class="">
+                                            08574858582
+                                        </tr>
+                                        <tr class="">
+                                            fangtong@gmail.com
+                                        </tr>
+                                        <tr class="">
+                                            Yes
+                                        </tr>
+                                        <tr class="">
+                                            27/06/2022 (1 Month)
+                                        </tr>
+                                    </td>
+                                </tbody>
+                            </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="m-5">
+                        <p class="text-black text-3xl text-start font-bold">Class</p>
+                            <div class="relative overflow-x-auto ">
+                            <table class=" border-separate border-spacing-y-2 w-full text-sm text-left text-gray-900 font-semibold ">
+                                <tbody>
+                                    <tr class="border border-black">
+                                        <td class="border-y border-l border-black px-3 py-2">
+                                            Cardio
+                                        </td>
+                                        <td class="border-y border-black py-2">
+                                            Body Combat
+                                        </td>
+                                        <td class="border-y border-black px-3 py-2">
+                                            Trainer Irwan
+                                        </td>
+                                        <td class="flex border-y border-black px-3 py-2">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                            </svg>
+                                            <p class="px-1.5">21.00</p>
+                                        </td>
+                                        <td class="border-y border-black px-3 py-2">
+                                            27/02/2022
+                                        </td>
+                                        <td class="border-y border-r border-black px-9 py-2">
+                                            Offline
+                                        </td>
+                                    </tr>
+                                    <tr class="border border-black">
+                                        <td class="border-y border-l border-black px-3 py-2">
+                                            Cardio
+                                        </td>
+                                        <td class="border-y border-black py-2">
+                                            Body Combat
+                                        </td>
+                                        <td class="border-y border-black px-3 py-2">
+                                            Trainer Irwan
+                                        </td>
+                                        <td class="flex border-y border-black px-3 py-2">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                            </svg>
+                                            <p class="px-1.5">21.00</p>
+                                        </td>
+                                        <td class="border-y border-black px-3 py-2">
+                                            27/02/2022
+                                        </td>
+                                        <td class="border-y border-r border-black px-9 py-2">
+                                            Offline
+                                        </td>
+                                    </tr>
+                                    <tr class="border border-black">
+                                        <td class="border-y border-l border-black px-3 py-2">
+                                            Cardio
+                                        </td>
+                                        <td class="border-y border-black py-2">
+                                            Body Combat
+                                        </td>
+                                        <td class="border-y border-black px-3 py-2">
+                                            Trainer Irwan
+                                        </td>
+                                        <td class="flex border-y border-black px-3 py-2">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                            </svg>
+                                            <p class="px-1.5">21.00</p>
+                                        </td>
+                                        <td class="border-y border-black px-3 py-2">
+                                            27/02/2022
+                                        </td>
+                                        <td class="border-y border-r border-black px-9 py-2">
+                                            Offline
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
