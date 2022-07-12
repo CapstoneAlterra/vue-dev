@@ -60,6 +60,18 @@ const routes = [
     component: () => import('../views/user/UserDetail.vue'),
     meta: { requiresAuth: true }
   },
+  {
+    path: '/content',
+    name: 'content',
+    component: () => import('../views/content/ContentView.vue'),
+    meta: { requiresAuth: true }
+  },
+  {
+    path: '/addcontent',
+    name: 'addcontent',
+    component: () => import('../views/content/AddContent.vue'),
+    meta: { requiresAuth: true }
+  },
 ]
 
 const router = new VueRouter({
