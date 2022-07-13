@@ -8,6 +8,10 @@ Vue.use(VueRouter)
 const routes = [
   {
     path: '/',
+    redirect: '/login'
+  },
+  {
+    path: '/',
     name: 'home',
     component: HomeView,
     meta: { requiresAuth: true }
@@ -48,6 +52,24 @@ const routes = [
     path: '/user',
     name: 'user',
     component: () => import('../views/user/UserView.vue'),
+    meta: { requiresAuth: true }
+  },
+  {
+    path: '/user/:id',
+    name: 'userdetail',
+    component: () => import('../views/user/UserDetail.vue'),
+    meta: { requiresAuth: true }
+  },
+  {
+    path: '/content',
+    name: 'content',
+    component: () => import('../views/content/ContentView.vue'),
+    meta: { requiresAuth: true }
+  },
+  {
+    path: '/addcontent',
+    name: 'addcontent',
+    component: () => import('../views/content/AddContent.vue'),
     meta: { requiresAuth: true }
   },
 ]
