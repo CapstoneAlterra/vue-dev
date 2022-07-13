@@ -1,8 +1,8 @@
 <template>
   <div class="w-64 ml-4 mr-2 mt-4" aria-label="Sidebar">
-   <div class="py-4 px-3 bg-white border-r-2 border-gray-200">
+    <div class="py-4 px-3 bg-white border-r-2 border-gray-200">
       <router-link to="/" class="flex items-center mb-10">
-         <img src="@/assets/logo.png" alt="">
+        <img src="@/assets/logo.png" alt="" />
       </router-link>
       <ul class="space-y-2">
          <li>
@@ -26,7 +26,7 @@
             </router-link>
          </li>
          <li>
-            <router-link to="#" class="flex items-center p-2 text-base font-normal text-black rounded-lg hover:bg-red-600 hover:text-white">
+            <router-link to="/offlineClass" class="flex items-center p-2 text-base font-normal text-black rounded-lg hover:bg-red-600 hover:text-white">
                 <svg xmlns="http://www.w3.org/2000/svg" class="flex-shrink-0 w-6 h-6 text-black dark:text-gray-400 hover:text-white dark:group-hover:text-black" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M18.364 5.636a9 9 0 010 12.728m0 0l-2.829-2.829m2.829 2.829L21 21M15.536 8.464a5 5 0 010 7.072m0 0l-2.829-2.829m-4.243 2.829a4.978 4.978 0 01-1.414-2.83m-1.414 5.658a9 9 0 01-2.167-9.238m7.824 2.167a1 1 0 111.414 1.414m-1.414-1.414L3 3m8.293 8.293l1.414 1.414" />
                 </svg>
@@ -55,47 +55,46 @@
             <path fill-rule="evenodd" d="M11.49 3.17c-.38-1.56-2.6-1.56-2.98 0a1.532 1.532 0 01-2.286.948c-1.372-.836-2.942.734-2.106 2.106.54.886.061 2.042-.947 2.287-1.561.379-1.561 2.6 0 2.978a1.532 1.532 0 01.947 2.287c-.836 1.372.734 2.942 2.106 2.106a1.532 1.532 0 012.287.947c.379 1.561 2.6 1.561 2.978 0a1.533 1.533 0 012.287-.947c1.372.836 2.942-.734 2.106-2.106a1.533 1.533 0 01.947-2.287c1.561-.379 1.561-2.6 0-2.978a1.532 1.532 0 01-.947-2.287c.836-1.372-.734-2.942-2.106-2.106a1.532 1.532 0 01-2.287-.947zM10 13a3 3 0 100-6 3 3 0 000 6z" clip-rule="evenodd" />
             </svg>
             <span class="flex-1 ml-3 whitespace-nowrap text-start">Logout</span>
-            </button>
-         </li>
+          </button>
+        </li>
       </ul>
-   </div>
-</div>
+    </div>
+  </div>
 </template>
 
 <script>
 export default {
-   methods:{
-      logout() {
-        this.$swal({
-          title: 'Logout ?',
-          icon: 'warning',
-          showCancelButton: true,
-          confirmButtonColor: '#d33',
-          cancelButtonColor: '#757575',
-          confirmButtonText: 'Logout',
-          cancelButtonText: 'cancel',
-          closeOnConfirm: true,
-          closeOnCancel: true
-          }).then((result) => { 
-              if (result.value === true ) { 
-                this.alertLogoutSucces()
-                this.$store.commit('logout')
-                this.$router.replace({ name: "login" })
-              } 
-          }) 
-        },
-      alertLogoutSucces(){
-        this.$swal({
-          position: 'center',
-          icon: 'success',
-          title: 'Logout Succes',
-          showAlertLogoutSucces: false,
-          timer: 1500
-          });
-        },
+  methods: {
+    logout() {
+      this.$swal({
+        title: "Logout ?",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#d33",
+        cancelButtonColor: "#757575",
+        confirmButtonText: "Logout",
+        cancelButtonText: "cancel",
+        closeOnConfirm: true,
+        closeOnCancel: true,
+      }).then((result) => {
+        if (result.value === true) {
+          this.alertLogoutSucces();
+          this.$store.commit("logout");
+          this.$router.replace({ name: "login" });
+        }
+      });
     },
-}
+    alertLogoutSucces() {
+      this.$swal({
+        position: "center",
+        icon: "success",
+        title: "Logout Succes",
+        showAlertLogoutSucces: false,
+        timer: 1500,
+      });
+    },
+  },
+};
 </script>
 
-<style>
-</style>
+<style></style>

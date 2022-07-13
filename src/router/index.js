@@ -72,34 +72,52 @@ const routes = [
     component: () => import('../views/content/AddContent.vue'),
     meta: { requiresAuth: true }
   },
+  {
+    path: '/offlineClass',
+    name: 'offlineClass',
+    component: () => import ('../views/offlineClass/offlineClassView.vue'),
+    meta: { requiresAuth: true }
+  },
+  {
+    path: '/offlineClass/addOfflineClass',
+    name: 'addOfflineClass',
+    component: () => import ('../views/offlineClass/addOfflineClass.vue'),
+    meta: { requiresAuth: true }
+  },
+  {
+    path: '/offlineClass/Categories/:id',
+    name: 'categories',
+    component: () => import ('../views/offlineClass/OfflineCategory/OfflineCategoryById'),
+    meta: { requiresAuth: true }
+  },
 ]
 
 const router = new VueRouter({
-  mode: 'history',
-  base: process.env.BASE_URL,
-  routes
+    mode: 'history',
+    base: process.env.BASE_URL,
+    routes
 })
 
 router.beforeEach((to, _, next) => {
-  if (to.name == "login" && store.state.token) {
-    next({
-      name: 'user'
-    })
-  }
-  if (to.matched.length == 0 ) {
-    next({
-      name: 'notFound'
-    })
-  }
-  // instead of having to check every route record with
-  // to.matched.some(record => record.meta.requiresAuth)
-  if (to.meta.requiresAuth && !store.state.token) {
-    // this route requires auth, check if logged in
-    // if not, redirect to login page.
-    next({
-      name: 'login'
-    })
-  }
-  next() 
+    if (to.name == "login" && store.state.token) {
+        next({
+            name: 'user'
+        })
+    }
+    if (to.matched.length == 0) {
+        next({
+            name: 'notFound'
+        })
+    }
+    // instead of having to check every route record with
+    // to.matched.some(record => record.meta.requiresAuth)
+    if (to.meta.requiresAuth && !store.state.token) {
+        // this route requires auth, check if logged in
+        // if not, redirect to login page.
+        next({
+            name: 'login'
+        })
+    }
+    next()
 })
 export default router

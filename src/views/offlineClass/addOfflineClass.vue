@@ -1,0 +1,277 @@
+<template>
+  <div>
+    <div class="flex text-start">
+      <SideBar />
+      <div class="w-full flex flex-col">
+        <div>
+          <NavbarAdmin />
+        </div>
+        <div class="mx-5 my-10">
+          <!-- button -->
+          <router-link to="/offlineClass">
+            <button class="border-2 border-solid rounded-full">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-10 w-10"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M15 19l-7-7 7-7"
+                />
+              </svg>
+            </button>
+          </router-link>
+          <!-- title -->
+          <h1 class="text-5xl font-medium my-5">Add New Class</h1>
+          <!-- form -->
+          <div class="my-10">
+            <form action="submit" method="post">
+              <div class="grid my-5 grid-cols-3 gap-2">
+                <div>
+                  <label
+                    for="category"
+                    class="block mb-2 text-xl font-medium text-gray-900"
+                    >Category</label
+                  >
+                  <select
+                    id="category"
+                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm focus:ring-blue-500 focus:border-blue-500 block w-60 p-2.5"
+                  >
+                    <option selected>Choose a category</option>
+                    <option value="1">Cardio</option>
+                    <option value="2">Strength</option>
+                    <option value="3">Dance</option>
+                  </select>
+
+                  <div class="my-5">
+                    <div class="relative">
+                      <label
+                        for="datepicker"
+                        class="block mb-2 text-xl font-medium text-gray-900"
+                        >Date</label
+                      >
+
+                      <input
+                        datepicker
+                        datepicker-format="mm/dd/yyyy"
+                        type="date"
+                        class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-60 pl-10 p-2.5"
+                        placeholder="Select date"
+                      />
+                    </div>
+                    <div class="my-5">
+                      <p class="font-medium text-xl">Price</p>
+                      <p
+                        class="bg-red-500 text-white mt-3 text-center rounded w-max h-max p-3"
+                      >
+                        Rp. 45.000
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <label
+                    for="category"
+                    class="block mb-2 text-xl font-medium text-gray-900"
+                    >Class</label
+                  >
+                  <select
+                    id="class"
+                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm focus:ring-blue-500 focus:border-blue-500 block w-60 p-2.5"
+                  >
+                    <option selected>Choose a class</option>
+                    <option value="1">Cardio</option>
+                    <option value="2">Strength</option>
+                    <option value="3">Dance</option>
+                  </select>
+
+                  <div class="my-5">
+                    <label
+                      for="time"
+                      class="block mb-2 text-xl font-medium text-gray-900"
+                      >Time</label
+                    >
+                    <div class="relative w-80">
+                      <input
+                        type="time"
+                        id="time"
+                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm w-60 p-2.5 text-left"
+                      />
+                    </div>
+                  </div>
+                  <div>
+                    <h1 class="block mb-2 text-xl font-medium text-gray-900">
+                      Add Image Class
+                    </h1>
+                    <div
+                      class="block items-center p-2 border border-red-400 w-52"
+                    >
+                      <div class="flex justify-center items-center">
+                        <label
+                          for="dropzone-file"
+                          class="flex flex-col justify-center items-center w-full h-full bg-gray-50 rounded-lg border-2 border-gray-300 border-dashed cursor-pointer dark:bg-gray-300"
+                        >
+                          <div
+                            class="flex flex-col justify-center items-center pt-5 pb-6"
+                          >
+                            <svg
+                              class="mb-3 w-10 h-10 text-gray-400"
+                              fill="none"
+                              stroke="currentColor"
+                              viewBox="0 0 24 24"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="2"
+                                d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"
+                              ></path>
+                            </svg>
+                            <p class="mb-2 text-sm text-gray-500">
+                              <span class="font-semibold"
+                                >Click to upload Image</span
+                              >
+                              or drag and drop
+                            </p>
+                          </div>
+                          <input
+                            id="dropzone-file"
+                            type="file"
+                            class="hidden"
+                          />
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <label
+                    for="category"
+                    class="block mb-2 text-xl font-medium text-gray-900"
+                    >Trainer</label
+                  >
+                  <select
+                    id="class"
+                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm focus:ring-blue-500 focus:border-blue-500 block w-60 p-2.5"
+                  >
+                    <option selected>Choose a Trainer</option>
+                    <option value="1">Cardio</option>
+                    <option value="2">Strength</option>
+                    <option value="3">Dance</option>
+                  </select>
+                  <!-- checkbox -->
+                  <div class="my-5">
+                    <p class="block mb-2 text-xl font-medium text-gray-900">
+                      Things To Brings
+                    </p>
+                    <div class="flex items-center">
+                      <input
+                        id="things1"
+                        type="checkbox"
+                        value="air"
+                        class="w-5 h-5 text-blue-500 bg-red-100 border-red-500"
+                      />
+                      <label
+                        for="things1"
+                        class="ml-2 text-base font-medium text-gray-900"
+                        >Air Mineral</label
+                      >
+                    </div>
+                    <div class="flex items-center">
+                      <input
+                        id="things2"
+                        type="checkbox"
+                        value="pakaian"
+                        class="w-5 h-5 text-blue-500 bg-red-100 border-red-500"
+                      />
+                      <label
+                        for="things2"
+                        class="ml-2 text-base font-medium text-gray-900"
+                        >Pakaian Ganti</label
+                      >
+                    </div>
+                    <div class="flex items-center">
+                      <input
+                        id="things3"
+                        type="checkbox"
+                        value="handuk"
+                        class="w-5 h-5 text-blue-500 bg-red-100 border-red-500"
+                      />
+                      <label
+                        for="things3"
+                        class="ml-2 text-base font-medium text-gray-900"
+                        >Handuk</label
+                      >
+                    </div>
+                    <div class="flex items-center">
+                      <input
+                        id="things4"
+                        type="checkbox"
+                        value="sepatu"
+                        class="w-5 h-5 text-blue-500 bg-red-100 border-red-500"
+                      />
+                      <label
+                        for="things4"
+                        class="ml-2 text-base font-medium text-gray-900"
+                        >Sepatu</label
+                      >
+                    </div>
+                    <div class="flex items-center">
+                      <input
+                        id="other"
+                        type="checkbox"
+                        value="other"
+                        class="w-5 h-5 text-blue-500 bg-red-100 border-red-500"
+                      />
+                      <label
+                        for="other"
+                        class="ml-2 text-base font-medium text-gray-900"
+                        >Lainnya</label
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="my-5">
+                <div class="mb-5">
+                  <label
+                    for="large-input"
+                    class="block mb-2 text-xl font-medium text-gray-900"
+                    >Description</label
+                  >
+                  <input
+                    type="text"
+                    id="large-input"
+                    class="block w-full h-28 text-gray-900 border-2 border-red-600 bg-gray-50"
+                  />
+                </div>
+              </div>
+              <div>
+                <button
+                  class="absolute-right-200 bg-red-600 text-white rounded-md gap-1 h-14 w-24 text-center px-1"
+                >
+                  <span class="text-xl">SAVE</span>
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
+
+<script>
+import SideBar from "../../components/SideBar.vue";
+import NavbarAdmin from "../../components/NavbarAdmin.vue";
+export default {
+  components: { SideBar, NavbarAdmin },
+  name: "addOfflineClass",
+};
+</script>
