@@ -33,12 +33,12 @@
                     </router-link>
                 </div>
                 <div>
-                    <div class="m-5 max-w-lg border border-4 border-red-600 p-4">
+                    <div class="m-5 max-w-xl border border-4 border-red-600 p-4">
                         <div>
-                            <p class="text-black text-3xl font-bold text-start">Fulan Adi Ahmad</p>
+                            <p class="text-black text-3xl font-bold text-start">{{ user.name }}</p>
                             <div class="relative overflow-x-auto my-3 ">
-                            <table class="w-full text-left font-semibold">
-                                <tbody class="text-xl text-gray-400 ">
+                                <table class="w-full text-left font-semibold">
+                                    <tbody class="text-xl text-gray-400 ">
                                     <td>
                                         <tr scope="col" class="">
                                             ID
@@ -61,22 +61,22 @@
                                     </td>
                                     <td class="text-black">
                                         <tr class=" ">
-                                            ID-001
+                                            ID-00{{ user.id }}
                                         </tr>
                                         <tr class="">
-                                            1345256472842
+                                            -
                                         </tr>
                                         <tr class="">
-                                            08574858582
+                                            {{ user.number }}
                                         </tr>
                                         <tr class="">
-                                            fangtong@gmail.com
+                                            {{ user.email }}
                                         </tr>
                                         <tr class="">
-                                            Yes
+                                            -
                                         </tr>
                                         <tr class="">
-                                            27/06/2022 (1 Month)
+                                            -
                                         </tr>
                                     </td>
                                 </tbody>
@@ -173,8 +173,29 @@
 <script>
 import SideBar from '../../components/SideBar.vue'
 import NavbarAdmin from '../../components/NavbarAdmin.vue'
+import axios from 'axios'
 export default {
-    components: { SideBar, NavbarAdmin }
+    components: { SideBar, NavbarAdmin },
+    data() {
+        return {
+        user: [],
+        }
+    },
+    mounted() {
+      axios
+        .get(`https://62d457765112e98e484e3952.mockapi.io/users/${this.$route.params.id}`)
+        .then((response) => {this.user = response.data
+        })
+        .catch((error) => {console.log(error)
+        })
+    },
+    computed: {
+        detail() {
+            return this.user.find(
+                (user) => user.id === this.$route.params.id
+            )
+        }
+    }
 }
 </script>
 
