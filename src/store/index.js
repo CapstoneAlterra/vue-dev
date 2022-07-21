@@ -4,6 +4,7 @@ import offlineclass from './offlineclass';
 import category from './category'
 import classname from './classname'
 import trainer from './trainer'
+import onlineclass from "./onlineclass";
 import createPersistedState from "vuex-persistedstate";
 
 Vue.use(Vuex)
@@ -27,6 +28,7 @@ export default new Vuex.Store({
         offlineclass,
         category,
         classname,
-        trainer
+        trainer,
+        onlineclass
     }
 })

@@ -76,6 +76,27 @@ const routes = [{
             import ('../views/offlineClass/OfflineCategory/OfflineCategoryById'),
         meta: { requiresAuth: true }
     },
+    {
+        path: '/onlineClass',
+        name: 'onlineClass',
+        component: () =>
+            import ('../views/onlineClass/onlineClassView.vue'),
+        meta: { requiresAuth: true }
+    },
+    {
+        path: '/onlineClass/addOnlineClass',
+        name: 'addOnlineClass',
+        component: () =>
+            import ('../views/onlineClass/addOnlineClass.vue'),
+        meta: { requiresAuth: true }
+    },
+    {
+        path: '/onlineClass/Categories/:id',
+        name: 'online categories',
+        component: () =>
+            import ('../views/onlineClass/OnlineCategory/OnlineCategoryById'),
+        meta: { requiresAuth: true }
+    }
 
 ]
 

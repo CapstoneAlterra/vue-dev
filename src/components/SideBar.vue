@@ -87,7 +87,7 @@
         </li>
         <li>
           <router-link
-            to="#"
+            to="/onlineClass"
             class="flex items-center p-2 text-base font-normal text-black rounded-lg hover:bg-red-600 hover:text-white"
           >
             <svg
