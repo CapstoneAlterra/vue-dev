@@ -61,6 +61,18 @@ const routes = [
     meta: { requiresAuth: true }
   },
   {
+    path: '/membership',
+    name: 'membership',
+    component: () => import('../views/member/MemberView.vue'),
+    meta: { requiresAuth: true }
+  },
+  {
+    path: '/membership/:id',
+    name: 'membershipdetail',
+    component: () => import('../views/member/MemberDetail.vue'),
+    meta: { requiresAuth: true }
+  },
+  {
     path: '/content',
     name: 'content',
     component: () => import('../views/content/ContentView.vue'),
@@ -75,21 +87,45 @@ const routes = [
   {
     path: '/offlineClass',
     name: 'offlineClass',
-    component: () => import ('../views/offlineClass/offlineClassView.vue'),
+    component: () =>
+        import ('../views/offlineClass/offlineClassView.vue'),
     meta: { requiresAuth: true }
-  },
-  {
-    path: '/offlineClass/addOfflineClass',
-    name: 'addOfflineClass',
-    component: () => import ('../views/offlineClass/addOfflineClass.vue'),
-    meta: { requiresAuth: true }
-  },
-  {
-    path: '/offlineClass/Categories/:id',
-    name: 'categories',
-    component: () => import ('../views/offlineClass/OfflineCategory/OfflineCategoryById'),
-    meta: { requiresAuth: true }
-  },
+    },
+    {
+        path: '/offlineClass/addOfflineClass',
+        name: 'addOfflineClass',
+        component: () =>
+            import ('../views/offlineClass/addOfflineClass.vue'),
+        meta: { requiresAuth: true }
+    },
+    {
+        path: '/offlineClass/Categories/:id',
+        name: 'categories',
+        component: () =>
+            import ('../views/offlineClass/OfflineCategory/OfflineCategoryById'),
+        meta: { requiresAuth: true }
+    },
+    {
+        path: '/onlineClass',
+        name: 'onlineClass',
+        component: () =>
+            import ('../views/onlineClass/onlineClassView.vue'),
+        meta: { requiresAuth: true }
+    },
+    {
+        path: '/onlineClass/addOnlineClass',
+        name: 'addOnlineClass',
+        component: () =>
+            import ('../views/onlineClass/addOnlineClass.vue'),
+        meta: { requiresAuth: true }
+    },
+    {
+        path: '/onlineClass/Categories/:id',
+        name: 'online categories',
+        component: () =>
+            import ('../views/onlineClass/OnlineCategory/OnlineCategoryById'),
+        meta: { requiresAuth: true }
+    },
 ]
 
 const router = new VueRouter({

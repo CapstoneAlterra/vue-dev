@@ -18,7 +18,7 @@
             </router-link>
          </li>
          <li>
-            <router-link to="#" class="flex items-center p-2 text-base font-normal text-black rounded-lg hover:bg-red-600 hover:text-white">
+            <router-link to="/membership" class="flex items-center p-2 text-base font-normal text-black rounded-lg hover:bg-red-600 hover:text-white">
                 <svg xmlns="http://www.w3.org/2000/svg" class="flex-shrink-0 w-6 h-6 text-black dark:text-gray-400 hover:text-white dark:group-hover:text-black" viewBox="0 0 20 20" fill="currentColor">
                 <path d="M9 6a3 3 0 11-6 0 3 3 0 016 0zM17 6a3 3 0 11-6 0 3 3 0 016 0zM12.93 17c.046-.327.07-.66.07-1a6.97 6.97 0 00-1.5-4.33A5 5 0 0119 16v1h-6.07zM6 11a5 5 0 015 5v1H1v-1a5 5 0 015-5z" />
                 </svg>
@@ -34,7 +34,7 @@
             </router-link>
          </li>
          <li>
-            <router-link to="#" class="flex items-center p-2 text-base font-normal text-black rounded-lg hover:bg-red-600 hover:text-white">
+            <router-link to="/onlineClass" class="flex items-center p-2 text-base font-normal text-black rounded-lg hover:bg-red-600 hover:text-white">
                 <svg xmlns="http://www.w3.org/2000/svg" class="flex-shrink-0 w-6 h-6 text-black dark:text-gray-400 hover:text-white dark:group-hover:text-black" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M5.636 18.364a9 9 0 010-12.728m12.728 0a9 9 0 010 12.728m-9.9-2.829a5 5 0 010-7.07m7.072 0a5 5 0 010 7.07M13 12a1 1 0 11-2 0 1 1 0 012 0z" />
                 </svg>

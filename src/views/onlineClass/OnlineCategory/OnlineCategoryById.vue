@@ -8,7 +8,7 @@
         </div>
         <div class="mx-5 my-10">
           <!-- button -->
-          <router-link to="/offlineClass/">
+          <router-link to="/onlineClass">
             <button class="border rounded-full mb-5">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -110,7 +110,7 @@ export default {
     getclassbycategoryid() {
       axios
         .get(
-          `https://gym-capstone.hasura.app/api/rest/offlineclass/bycategoryid/${this.$route.params.id}`
+          `https://gym-capstone.hasura.app/api/rest/onlineclass/bycategoryid/${this.$route.params.id}`
         )
         .then((response) => {
           this.$store.commit(

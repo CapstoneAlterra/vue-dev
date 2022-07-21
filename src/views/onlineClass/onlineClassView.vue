@@ -7,8 +7,8 @@
           <NavbarAdmin />
         </div>
         <div>
-          <div class="mx-auto m-5">
-            <h1 class="text-5xl font-semibold m-5">Category</h1>
+          <div class="mx-auto py-8">
+            <h1 class="text-5xl font-semibold mb-8">Category</h1>
             <!-- card -->
             <div class="flex">
               <div
@@ -17,7 +17,10 @@
                 class="grid place-content-start place-items-center mx-5"
               >
                 <router-link
-                  :to="{ name: 'categories', params: { id: category.id } }"
+                  :to="{
+                    name: 'online categories',
+                    params: { id: category.id },
+                  }"
                 >
                   <div
                     class="text-center bg-white border-4 border-red-600 w-48 h-32 hover:bg-red-100"
@@ -158,7 +161,7 @@
                   </ul>
                 </div>
               </div>
-              <router-link to="/offlineCLass/addOfflineClass">
+              <router-link to="/onlineCLass/addOnlineClass">
                 <button
                   class="inline-flex bg-red-600 text-white rounded-md gap-1 h-14 w-40 items-center px-1"
                 >
@@ -399,7 +402,7 @@ export default {
   },
   computed: {
     listKelas() {
-      return this.$store.state.offlineclass.kelasList;
+      return this.$store.state.onlineclass.onlinekelasList;
     },
     listCategory() {
       return this.$store.state.category.categoryList;
@@ -447,7 +450,7 @@ export default {
         });
     },
     fetchkelas() {
-      this.$store.dispatch(`offlineclass/fetchList`);
+      this.$store.dispatch(`onlineclass/fetchonlinekelasList`);
     },
     fetchCategory() {
       this.$store.dispatch(`category/fetchList`);

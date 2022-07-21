@@ -8,7 +8,7 @@
         </div>
         <div class="mx-5 my-10">
           <!-- button -->
-          <router-link to="/offlineClass">
+          <router-link to="../onlineClass">
             <button class="border-2 border-solid rounded-full">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -212,10 +212,10 @@
                   <!-- things -->
                   <div class="my-5">
                     <label class="block mb-2 text-xl font-medium text-gray-900">
-                      Things To Brings
+                      Zoom Link
                     </label>
                     <input
-                      v-model="things"
+                      v-model="zoom_link"
                       type="text"
                       class="w-52 h-10 text-sm text-gray-900 bg-gray-50 border border-gray-300 text-start align-text-top"
                     />
@@ -270,7 +270,7 @@ export default {
       trainer_id: null,
       price: null,
       description: "",
-      things: "",
+      zoom_link: "",
       time_start: null,
       time_end: null,
     };
@@ -300,7 +300,7 @@ export default {
       await axios
         .post("https://gym-capstone.hasura.app/api/rest/addclass", {
           class_name_id: this.class_name_id,
-          type_id: 1,
+          type_id: 2,
           date: this.date,
           time_start: this.time_start,
           time_end: this.time_end,
@@ -308,11 +308,11 @@ export default {
           trainer_id: this.trainer_id,
           price: this.price,
           description: this.description,
-          things: "",
+          zoom_link: this.zoom_link,
         })
         .then((response) => {
           this.alertAddSucces(response);
-          this.$router.push({ name: "offlineClass" });
+          this.$router.push({ name: "onlineClass" });
         })
         .catch((error) => {
           this.alertAddError(error);

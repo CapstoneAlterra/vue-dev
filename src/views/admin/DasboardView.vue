@@ -22,7 +22,7 @@
                         </div>
                     </div>
                     <div class="m-5 h-96 max-h-xs border border-2 border-red-600 text-red-600 font-semibold">
-                        <vue-cal :time-from="8 * 60" :time-to="19 * 60" :time-step="30" hide-weekends />
+                        <vue-cal :time-from="8 * 60" :time-to="19 * 60" :time-step="30" hide-weekends ></vue-cal>
                     </div>
                 </div>
             </div>
@@ -36,7 +36,12 @@ import 'vue-cal/dist/vuecal.css'
 import SideBar from '../../components/SideBar.vue'
 import NavbarAdmin from '../../components/NavbarAdmin.vue'
 export default {
-    components: { SideBar, NavbarAdmin, VueCal }
+    components: { SideBar, NavbarAdmin, VueCal },
+    data() {
+        return {
+            
+        }
+    },
 }
 </script>
 
