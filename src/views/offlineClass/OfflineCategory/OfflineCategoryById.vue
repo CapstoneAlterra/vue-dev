@@ -53,20 +53,21 @@
           </div>
           <!-- Classes -->
           <div class="grid my-5 grid-cols-3 text-center gap-2">
-            <div v-for="(category, index) in categories" :key="index">
+            <div v-for="class_name in listClass_name" :key="class_name.id">
               <h1 class="text-2xl font-semibold">
-                {{ category.name }}
+                {{ class_name.name }}
               </h1>
               <!-- card -->
               <div>
                 <div
-                  v-for="(kelas, index) in category.classes"
+                  v-for="(kelas, index) in class_name.classes"
                   :key="index"
                   class="m-3 p-5 bg-white border-4 border-red-500 shadow-md hover:bg-red-100 text-center text-xl"
                 >
-                  <h1 class="font-medium">{{ category.name }}</h1>
-                  <p>{{ kelas.trainer }}</p>
+                  <h1 class="font-medium">{{ class_name.name }}</h1>
+                  <p>{{ kelas.trainer.name }}</p>
                   <p>{{ kelas.date }}</p>
+                  <p>{{ kelas.time_start }} - {{ kelas.time_end }}</p>
                   <p>{{ kelas.time }}</p>
                   <div class="flex justify-center">
                     <svg
@@ -97,47 +98,30 @@
 <script>
 import NavbarAdmin from "@/components/NavbarAdmin.vue";
 import SideBar from "@/components/SideBar.vue";
+import axios from "axios";
 export default {
   components: { NavbarAdmin, SideBar },
-  data() {
-    return {
-      categories: [
-        {
-          name: "Body Combat",
-          classes: [
-            {
-              trainer: "Trainer Iwan",
-              date: "17 June 2022",
-              time: "20-00 - 21.00",
-              peserta: "30",
-            },
-            {
-              trainer: "Trainer Tulus",
-              date: "17 June 2022",
-              time: "21-00 - 22.00",
-              peserta: "30",
-            },
-          ],
-        },
-        {
-          name: "Step Up",
-          classes: [
-            {
-              trainer: "Trainer Adi",
-              date: "17 June 2022",
-              time: "20-00 - 21.00",
-              peserta: "30",
-            },
-            {
-              trainer: "Trainer Wawan",
-              date: "17 June 2022",
-              time: "21-00 - 22.00",
-              peserta: "30",
-            },
-          ],
-        },
-      ],
-    };
+  computed: {
+    listClass_name() {
+      return this.$store.state.classname.class_nameList;
+    },
+  },
+  methods: {
+    getclassbycategoryid() {
+      axios
+        .get(
+          `https://gym-capstone.hasura.app/api/rest/offlineclass/bycategoryid/${this.$route.params.id}`
+        )
+        .then((response) => {
+          this.$store.commit(
+            "classname/setClass",
+            response.data.category_by_pk.class_names
+          );
+        });
+    },
+  },
+  mounted() {
+    this.getclassbycategoryid();
   },
 };
 </script>
