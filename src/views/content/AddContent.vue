@@ -37,26 +37,26 @@
                         <p class="text-lg font-bold text-red-600 mb-6">Add Content</p>
                         <div class="mb-6">
                             <label for="title" class="block mb-2 text-sm font-medium text-gray-900">Content Title</label>
-                            <input type="text" id="title" class="shadow-sm bg-gray-50 border border-2 border-red-200 text-gray-900 text-sm rounded-lg hover:bg-red-100 focus:ring-red-600 focus:border-red-600 block w-full p-2.5 " placeholder="Content Title ..." required>
+                            <input v-model="title" type="text" id="title" class="shadow-sm bg-gray-50 border border-2 border-red-200 text-gray-900 text-sm rounded-lg hover:bg-red-100 focus:ring-red-600 focus:border-red-600 block w-full p-2.5 " placeholder="Content Title ..." required>
                         </div>
                         <div class="mb-6">
                             <label for="link" class="block mb-2 text-sm font-medium text-gray-900">Link (opsional)</label>
-                            <input type="text" id="link" class="shadow-sm bg-gray-50 border border-2 border-red-200 text-gray-900 text-sm rounded-lg hover:bg-red-100 focus:ring-red-600 focus:border-red-600 block w-full p-2.5 " placeholder="Content Title ..." required>
+                            <input v-model="link" type="text" id="link" class="shadow-sm bg-gray-50 border border-2 border-red-200 text-gray-900 text-sm rounded-lg hover:bg-red-100 focus:ring-red-600 focus:border-red-600 block w-full p-2.5 " placeholder="Content Title ..." required>
                         </div>
                         <div class="mb-6">
                             <label for="date" class="block mb-2 text-sm font-medium text-gray-900">Upload Date</label>
-                            <input type="date" id="date" class="shadow-sm bg-gray-50 border border-2 border-red-200 text-gray-900 text-sm rounded-lg hover:bg-red-100 focus:ring-red-600 focus:border-red-600 block w-full p-2.5 " placeholder="Content Title ..." required>
+                            <input v-model="date" type="date" id="date" class="shadow-sm bg-gray-50 border border-2 border-red-200 text-gray-900 text-sm rounded-lg hover:bg-red-100 focus:ring-red-600 focus:border-red-600 block w-full p-2.5 " placeholder="Content Title ..." required>
                         </div>
                         <div class="mb-6">
                             <label class="block mb-2 text-sm font-medium text-gray-900" for="image">Upload file</label>
-                            <input class="shadow-sm bg-gray-50 border border-2 border-red-200 text-gray-900 text-sm rounded-lg hover:bg-red-100 focus:ring-red-600 focus:border-red-600 block w-full p-2.5 "  type="file">
+                            <input @change="selectedImage" class="shadow-sm bg-gray-50 border border-2 border-red-200 text-gray-900 text-sm rounded-lg hover:bg-red-100 focus:ring-red-600 focus:border-red-600 block w-full p-2.5 "  type="file">
                         </div>
                         <div class="mb-6">
                             <label for="message" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400">Content Description</label>
-                            <textarea id="message" rows="4" class="shadow-sm bg-gray-50 border border-2 border-red-200 text-gray-900 text-sm rounded-lg hover:bg-red-100 focus:ring-red-600 focus:border-red-600 block w-full p-2.5 " placeholder="Content Description..."></textarea>
+                            <textarea v-model="desc" id="message" rows="4" class="shadow-sm bg-gray-50 border border-2 border-red-200 text-gray-900 text-sm rounded-lg hover:bg-red-100 focus:ring-red-600 focus:border-red-600 block w-full p-2.5 " placeholder="Content Description..."></textarea>
                         </div>
                         <div class="flex justify-end">
-                            <button class="p-2.5 px-3 text-sm font-medium text-white bg-red-600 rounded border border-red-600 hover:bg-red-100 hover:text-red-600" type="button">Upload Content</button>
+                            <button @click="uploadContent()" class="p-2.5 px-3 text-sm font-medium text-white bg-red-600 rounded border border-red-600 hover:bg-red-100 hover:text-red-600" type="button">Upload Content</button>
                         </div>
                     </div>
                 </div>
@@ -68,8 +68,30 @@
 <script>
 import SideBar from '../../components/SideBar.vue'
 import NavbarAdmin from '../../components/NavbarAdmin.vue'
+import axios from 'axios'
 export default {
-    components: { SideBar, NavbarAdmin }
+    components: { SideBar, NavbarAdmin },
+    data() {
+        return {
+            title: '',
+            link: '',
+            date:'',
+            desc:'',
+            selectedFile: null,
+        }
+    },
+    methods: {
+        uploadContent() {
+            axios
+            .post(`https://62d457765112e98e484e3952.mockapi.io/content`, 
+            {title:this.title, link:this.link, date:this.date, desc:this.desc, image:this.selectedFile})
+            .then((response) => {console.log(response)})
+            .catch((error) => {console.log(error, "add")})
+        },
+        selectedImage(event) {
+            this.selectedFile = event.target.files[0]
+        }
+    }
 }
 </script>
 

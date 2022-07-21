@@ -42,7 +42,6 @@ export default {
                 this.alertLoginSucces()
                 this.$store.commit('loginSucces', response.data.result.token)
                 this.$router.replace({ name: "dashboard" })
-                console.log(response)
             })
             .catch((error) => {
                 this.alertLoginError(error)
